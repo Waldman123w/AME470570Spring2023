@@ -1,0 +1,6 @@
+1. Dircetions on how I hosted ny resume URL: 
+2. I first set up my lab by going to the sandbox,  CLicking open to start lab and then waiting until the AWS dot in the left corner turns green then click open
+3. The second step I did, is I went to EC2, go to instances and then Launch Instances
+4. The thid thing I did was set up with ubuntu with "Ubuntu Server 20.04 LTS" as the setting, no key value pair, and set the configure storage to be 28 instead of 8, then click launch instance button
+5. Go into security, open up the sercurity group then create a new inbound rule with type: "Al traffic" and leave the rest as it once instance is running, open it up
+6. 
