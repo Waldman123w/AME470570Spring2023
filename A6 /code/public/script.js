@@ -7,6 +7,19 @@ function start()
     document.getElementById("accountInfo").innerHTML = "Welcome, " + userObj.local.email;
     var elems = document.querySelectorAll('.modal');
     editModal = M.Modal.init(elems, {});
+    loadURL("/getUserImages", function(data){
+    var allImages = JSON.parse(data);
+    console.log("load profile pic");
+    if(allImages.length > 0){
+        var profilepic = bucketURL.concat(allImages[0].url);
+        document.getElementById("profilePic").style.backgroundImage = "url(".concat(profilepic, ")");
+    }
+
+    for(var i = 0; i < allImages.length; i++){
+        html += "<div class='col s4'><h1>" + allImages[i].intname + "</h1><img class='responsive-img' src='" + bucketURL + allImages[i].url + "'></div>";
+    }
+    $("#imageList").html(html);
+  });
 }
 
 function menuBtnClicked(index){

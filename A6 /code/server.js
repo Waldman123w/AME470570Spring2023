@@ -8,7 +8,8 @@ var url = require("url"),
 	querystring = require("querystring");
 var passport = require('passport');
 var fs = require('fs');
-var dbURL = 'mongodb://localhost:27017/test';
+var dbURL = 'mongodb://44.201.226.185:27017/test';
+
 
 
     var args = process.argv.slice(2);
