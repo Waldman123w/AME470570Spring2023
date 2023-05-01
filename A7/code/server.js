@@ -8,7 +8,7 @@ var url = require("url"),
 	querystring = require("querystring");
 var passport = require('passport');
 var fs = require('fs');
-var dbURL = 'mongodb://localhost:27017/test';
+var dbURL = 'mongodb://54.210.18.131:27017/test';
 
 
     var args = process.argv.slice(2);
@@ -89,6 +89,19 @@ app.get("/updateImageFilter", function(req, res){
     var filter = req.query.filter;
     var id = req.query.id;
     db.collection('images').update({ _id: MS.helper.toObjectID(id) }, { $set: { filter: filter} }, function (err, result) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('updated:', result.length, result);
+            res.send(result);
+        }
+    });
+
+});
+app.get("/updateImageTitle", function(req, res){
+    var Name = req.query.imgtitle;
+    var id = req.query.id;
+    db.collection('images').update({ _id: MS.helper.toObjectID(id) }, { $set: { name: Name} }, function (err, result) {
         if (err) {
             console.log(err);
         } else {

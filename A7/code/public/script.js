@@ -22,8 +22,7 @@ function start()
 }
 
 
-function updateImageFilter()
-{
+function updateImageFilter(){
     var filter = document.getElementById("filterSelect").value;
     var img = allImages[currMenuIndex];
     document.getElementById("imagePreviewContainer").className = filter;
@@ -31,7 +30,13 @@ function updateImageFilter()
         console.log(data);
     });
 }
-
+function updateImageTitle() {
+var ImTitle = document.getElementById("imageTitle").value;
+    var img = allImages[currMenuIndex];
+    $.get("/updateImageTitle", {id: img._id, imgtitle: ImTitle}, function(data){
+        console.log(data);
+    });    
+}
 var currMenuIndex = 0;
 
 function menuBtnClicked(index){
@@ -124,7 +129,7 @@ function makeUserImageList(){
     allImages = JSON.parse(data);
     var html = "";
     for(var i = 0; i < allImages.length; i++){
-        html += "<button class='col s4 " + allImages[i].filter + "' onclick='imageSelected("+i+")'><h1>" + allImages[i].intname + "</h1><img class='responsive-img' src='" + bucketURL + allImages[i].url + "'></button>";
+        html += "<button class='col s4 " + allImages[i].filter + "' onclick='imageSelected("+i+")'><h1>" + allImages[i].name + "</h1><img class='responsive-img' src='" + bucketURL + allImages[i].url + "'></button>";
     }
     $("#imageList").html(html);
   });
