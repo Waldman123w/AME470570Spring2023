@@ -22,7 +22,7 @@
 #column0{
     width: 20vw;
     height: 100vh;
-    background-color: aliceblue;
+    background-color: rgb(253, 240, 255);
 }
 
 #column1{
@@ -31,7 +31,7 @@
     position: absolute;
     top: 0;
     left: 20vw;
-    background-color: azure;
+    background-color: rgb(103, 6, 64);
 }
 
 #column2{
@@ -40,7 +40,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    background-color: antiquewhite;
+    background-color: rgb(250, 215, 222);
 }
 
 #profilePic{
@@ -78,7 +78,7 @@
 }
 
 .menuBtn.selected{
-    background-color: gold !important;
+    background-color: rgb(255, 0, 157) !important;
 }
 
 @media screen and (max-width: 600px){
